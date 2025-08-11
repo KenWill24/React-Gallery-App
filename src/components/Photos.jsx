@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Create photo function to render photo
 function Photo({ photo }) {
     return (
         <li>

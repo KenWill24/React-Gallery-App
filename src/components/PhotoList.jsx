@@ -1,6 +1,7 @@
 import React from 'react';
 import Photo from './Photos';
 
+//Function to display photos after being rendered
 function PhotoList({ photos, title }) {
   return (
     <div className="photo-container">

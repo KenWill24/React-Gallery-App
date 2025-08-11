@@ -3,17 +3,17 @@ import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from '
 import Nav from './components/Nav';
 import Search from './components/Search';
 import PhotoList from './components/PhotoList';
+import apiKey from '../config';
 
-
-const API_KEY = '51517606-3b09e132fb0385c8eca99a43c';
 
 function App() {
   const [photos, setPhotos] = useState([]);
 
+  //Fetching API data
   const fetchData = async (query) => {
     try {
       const response = await fetch(
-        `https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(query)}&image_type=photo`
+        `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(query)}&image_type=photo`
       );
       const data = await response.json();
       setPhotos(data.hits);
@@ -21,6 +21,7 @@ function App() {
       console.error('Error fetching data:', error);
     }
   };
+  
   //fetchData for Photos and PhotoList renders the photos
   function StaticTopicWrapper({ title, fetchData, photos }) {
     const location = useLocation();

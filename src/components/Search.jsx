@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//Create search bar
 const Search = () => {
   const [searchText, setSearchText] = useState('');
   const navigate = useNavigate();
